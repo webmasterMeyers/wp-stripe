@@ -2,11 +2,11 @@
 
 /**
  * Plugin Name: WP Stripe Payment
- * Plugin URI: https://example.com/wp-stripe-payment
+ * Plugin URI: https://github.com/webmasterMeyers/wp-stripe
  * Description: Accept Stripe payments in WordPress with support for URL parameters and metadata.
  * Version: 1.0.0
- * Author: Your Name
- * Author URI: https://example.com
+ * Author: Some Random AI
+ * Author URI: https://github.com/webmasterMeyers/wp-stripe
  * License: GPL v2 or later
  * License URI: https://www.gnu.org/licenses/gpl-2.0.html
  * Text Domain: wp-stripe-payment

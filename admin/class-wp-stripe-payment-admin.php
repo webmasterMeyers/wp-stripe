@@ -431,7 +431,7 @@ class WP_Stripe_Payment_Admin
      */
     public function test_connection()
     {
-        check_ajax_referer('wp_stripe_payment_nonce', 'nonce');
+        check_ajax_referer('wp_stripe_payment_admin_nonce', 'nonce');
 
         if (!current_user_can('manage_options')) {
             wp_send_json_error('Insufficient permissions');

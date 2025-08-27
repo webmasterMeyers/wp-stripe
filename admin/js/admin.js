@@ -160,7 +160,7 @@
             method: 'POST',
             data: {
                 action: 'wp_stripe_test_connection',
-                nonce: wpStripePayment.nonce
+                nonce: wpStripeAdmin.nonce
             },
             success: function (response) {
                 if (response.success) {

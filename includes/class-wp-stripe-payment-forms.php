@@ -28,7 +28,10 @@ class WP_Stripe_Payment_Forms
      */
     public function ajax_get_payment_form()
     {
-        check_ajax_referer('wp_stripe_payment_nonce', 'nonce');
+        // Check nonce for security
+        if (!wp_verify_nonce($_POST['nonce'] ?? '', 'wp_stripe_payment_nonce')) {
+            wp_send_json_error('Invalid nonce');
+        }
 
         $amount = intval($_POST['amount'] ?? 0);
         $currency = sanitize_text_field($_POST['currency'] ?? 'usd');

@@ -186,6 +186,18 @@ class WP_Stripe_Payment
             array(),
             $this->version
         );
+
+        // Localize script for admin
+        wp_localize_script('wp-stripe-payment-admin', 'wpStripeAdmin', array(
+            'ajaxUrl' => admin_url('admin-ajax.php'),
+            'nonce' => wp_create_nonce('wp_stripe_payment_admin_nonce'),
+            'i18n' => array(
+                'testing' => __('Testing...', 'wp-stripe-payment'),
+                'testConnection' => __('Test Connection', 'wp-stripe-payment'),
+                'connectionSuccess' => __('Connection successful!', 'wp-stripe-payment'),
+                'connectionFailed' => __('Connection failed', 'wp-stripe-payment'),
+            )
+        ));
     }
 
     /**

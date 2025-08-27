@@ -35,26 +35,40 @@
         // Create elements
         elements = stripe.elements();
 
-        // Create card element
-        cardElement = elements.create('card', {
-            style: {
-                base: {
-                    fontSize: '16px',
-                    color: '#424770',
-                    '::placeholder': {
-                        color: '#aab7c4',
+        // Create and mount card element for main form
+        mountCardElement();
+    }
+
+    /**
+     * Mount card element
+     */
+    function mountCardElement() {
+        // Remove existing card element if it exists
+        const existingCard = document.getElementById('card-element');
+        if (existingCard) {
+            existingCard.innerHTML = '';
+
+            // Create card element
+            cardElement = elements.create('card', {
+                style: {
+                    base: {
+                        fontSize: '16px',
+                        color: '#424770',
+                        '::placeholder': {
+                            color: '#aab7c4',
+                        },
+                    },
+                    invalid: {
+                        color: '#9e2146',
                     },
                 },
-                invalid: {
-                    color: '#9e2146',
-                },
-            },
-        });
+            });
 
-        // Mount card element
-        const cardContainer = document.getElementById('card-element');
-        if (cardContainer) {
-            cardElement.mount(cardContainer);
+            // Mount card element
+            cardElement.mount(existingCard);
+
+            // Add event listener for card changes
+            cardElement.on('change', handleCardElementChange);
         }
     }
 
