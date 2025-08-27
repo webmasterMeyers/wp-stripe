@@ -1,0 +1,489 @@
+/**
+ * WP Stripe Payment Admin Styles
+ * Styling for the WordPress admin interface
+ */
+
+/* Admin Menu Icon */
+#adminmenu .dashicons-money-alt {
+    color: #667eea;
+}
+
+/* Settings Page */
+.wp-stripe-payment-settings {
+    max-width: 800px;
+}
+
+/* Form Styling */
+.form-table th {
+    width: 200px;
+    padding: 20px 10px 20px 0;
+}
+
+.form-table td {
+    padding: 15px 10px;
+}
+
+.form-table input[type="text"],
+.form-table input[type="password"],
+.form-table input[type="email"],
+.form-table select {
+    width: 400px;
+    max-width: 100%;
+}
+
+.form-table .description {
+    margin-top: 8px;
+    color: #666;
+    font-style: italic;
+}
+
+/* Test Connection Button */
+.button-secondary {
+    margin-left: 10px;
+}
+
+/* Help Section */
+.stripe-help-section {
+    margin-top: 40px;
+    padding: 20px;
+    background: #f9f9f9;
+    border: 1px solid #e1e5e9;
+    border-radius: 8px;
+}
+
+.stripe-help-section h2 {
+    margin-top: 0;
+    color: #333;
+    border-bottom: 2px solid #667eea;
+    padding-bottom: 10px;
+}
+
+.stripe-help-section h3 {
+    color: #555;
+    margin-top: 25px;
+}
+
+.stripe-help-section ol {
+    margin-left: 20px;
+}
+
+.stripe-help-section li {
+    margin-bottom: 8px;
+    line-height: 1.6;
+}
+
+.stripe-help-section code {
+    background: #f1f3f4;
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+    font-size: 13px;
+}
+
+/* Shortcode Examples */
+.stripe-shortcode-examples {
+    margin-top: 20px;
+}
+
+.stripe-shortcode-examples h4 {
+    color: #333;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+.stripe-shortcode-examples p {
+    margin-bottom: 15px;
+    line-height: 1.6;
+}
+
+.stripe-shortcode-examples ul {
+    margin-left: 20px;
+}
+
+.stripe-shortcode-examples li {
+    margin-bottom: 8px;
+    line-height: 1.6;
+}
+
+/* Tables */
+.wp-list-table {
+    margin-top: 20px;
+}
+
+.wp-list-table th {
+    font-weight: 600;
+    color: #333;
+}
+
+.wp-list-table td {
+    vertical-align: middle;
+}
+
+/* Payment Status */
+.payment-status {
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.status-succeeded {
+    background: #d4edda;
+    color: #155724;
+}
+
+.status-pending {
+    background: #fff3cd;
+    color: #856404;
+}
+
+.status-failed {
+    background: #f8d7da;
+    color: #721c24;
+}
+
+.status-canceled {
+    background: #e2e3e5;
+    color: #383d41;
+}
+
+.status-requires_action {
+    background: #cce5ff;
+    color: #004085;
+}
+
+.status-requires_payment_method {
+    background: #f8d7da;
+    color: #721c24;
+}
+
+/* Webhook Info */
+.webhook-info {
+    background: #f8f9fa;
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    border: 1px solid #e1e5e9;
+}
+
+.webhook-info h3 {
+    margin-top: 0;
+    color: #333;
+}
+
+.webhook-info code {
+    background: #e9ecef;
+    padding: 8px 12px;
+    border-radius: 4px;
+    font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+    display: block;
+    margin: 10px 0;
+    word-break: break-all;
+}
+
+.webhook-info ul {
+    margin-left: 20px;
+}
+
+.webhook-info li {
+    margin-bottom: 8px;
+    line-height: 1.6;
+}
+
+/* Processed Status */
+.processed {
+    color: #28a745;
+    font-weight: 600;
+}
+
+.not-processed {
+    color: #dc3545;
+    font-weight: 600;
+}
+
+/* Admin Notices */
+.notice {
+    margin: 20px 0;
+}
+
+.notice-success {
+    border-left-color: #28a745;
+}
+
+.notice-warning {
+    border-left-color: #ffc107;
+}
+
+.notice-error {
+    border-left-color: #dc3545;
+}
+
+/* Responsive Design */
+@media (max-width: 782px) {
+
+    .form-table th,
+    .form-table td {
+        display: block;
+        width: 100%;
+        padding: 10px 0;
+    }
+
+    .form-table input[type="text"],
+    .form-table input[type="password"],
+    .form-table input[type="email"],
+    .form-table select {
+        width: 100%;
+    }
+
+    .button-secondary {
+        margin-left: 0;
+        margin-top: 10px;
+        display: block;
+    }
+}
+
+/* Loading States */
+.loading {
+    opacity: 0.7;
+    pointer-events: none;
+}
+
+.loading::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 20px;
+    height: 20px;
+    margin: -10px 0 0 -10px;
+    border: 2px solid #f3f3f3;
+    border-top: 2px solid #667eea;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+/* Success/Error Messages */
+.ajax-response {
+    margin: 10px 0;
+    padding: 10px;
+    border-radius: 4px;
+    font-weight: 600;
+}
+
+.ajax-response.success {
+    background: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+}
+
+.ajax-response.error {
+    background: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+}
+
+/* Settings Tabs (if implemented) */
+.nav-tab-wrapper {
+    margin-bottom: 20px;
+}
+
+.nav-tab {
+    margin-right: 5px;
+}
+
+.nav-tab-active {
+    background: #fff;
+    border-bottom-color: #fff;
+}
+
+/* Field Groups */
+.field-group {
+    margin-bottom: 25px;
+    padding: 20px;
+    background: #fff;
+    border: 1px solid #e1e5e9;
+    border-radius: 8px;
+}
+
+.field-group h3 {
+    margin-top: 0;
+    color: #333;
+    border-bottom: 1px solid #e1e5e9;
+    padding-bottom: 10px;
+}
+
+/* Checkbox and Radio Styling */
+.form-table input[type="checkbox"],
+.form-table input[type="radio"] {
+    margin-right: 8px;
+}
+
+.form-table label[for] {
+    font-weight: normal;
+}
+
+/* Color Picker */
+.wp-color-result {
+    height: 30px;
+    border-radius: 4px;
+}
+
+.wp-color-result-text {
+    line-height: 28px;
+    padding: 0 8px;
+}
+
+/* Date and Time Picker */
+.form-table input[type="date"],
+.form-table input[type="time"] {
+    width: 200px;
+}
+
+/* Number Input */
+.form-table input[type="number"] {
+    width: 150px;
+}
+
+/* Textarea */
+.form-table textarea {
+    width: 400px;
+    min-height: 100px;
+    resize: vertical;
+}
+
+/* Select Multiple */
+.form-table select[multiple] {
+    height: 120px;
+}
+
+/* File Upload */
+.form-table input[type="file"] {
+    border: 2px dashed #e1e5e9;
+    padding: 20px;
+    text-align: center;
+    border-radius: 8px;
+    background: #f9f9f9;
+    width: 400px;
+}
+
+.form-table input[type="file"]:hover {
+    border-color: #667eea;
+    background: #f0f4ff;
+}
+
+/* Advanced Settings */
+.advanced-settings {
+    margin-top: 30px;
+    padding: 20px;
+    background: #f8f9fa;
+    border: 1px solid #e1e5e9;
+    border-radius: 8px;
+}
+
+.advanced-settings h3 {
+    margin-top: 0;
+    color: #333;
+}
+
+.advanced-settings .description {
+    color: #666;
+    font-size: 13px;
+}
+
+/* Tooltip */
+.tooltip {
+    position: relative;
+    display: inline-block;
+    margin-left: 5px;
+    color: #667eea;
+    cursor: help;
+}
+
+.tooltip .tooltiptext {
+    visibility: hidden;
+    width: 200px;
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 8px;
+    position: absolute;
+    z-index: 1;
+    bottom: 125%;
+    left: 50%;
+    margin-left: -100px;
+    opacity: 0;
+    transition: opacity 0.3s;
+    font-size: 12px;
+    line-height: 1.4;
+}
+
+.tooltip:hover .tooltiptext {
+    visibility: visible;
+    opacity: 1;
+}
+
+/* Import/Export */
+.import-export {
+    margin-top: 30px;
+    padding: 20px;
+    background: #fff;
+    border: 1px solid #e1e5e9;
+    border-radius: 8px;
+}
+
+.import-export h3 {
+    margin-top: 0;
+    color: #333;
+}
+
+.import-export .button {
+    margin-right: 10px;
+}
+
+/* System Status */
+.system-status {
+    margin-top: 30px;
+}
+
+.system-status table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+}
+
+.system-status th,
+.system-status td {
+    padding: 10px;
+    text-align: left;
+    border-bottom: 1px solid #e1e5e9;
+}
+
+.system-status th {
+    background: #f8f9fa;
+    font-weight: 600;
+}
+
+.status-ok {
+    color: #28a745;
+}
+
+.status-warning {
+    color: #ffc107;
+}
+
+.status-error {
+    color: #dc3545;
+}
